@@ -22,7 +22,6 @@ const path = require('path')
 const https = require('https')
 const fs = require('fs')
 const pem = require('pem')
-const Helpers = use('Helpers')
 
 pem.createCertificate({ days: 1, selfSigned: true }, (error, keys) => {
   if (error) {
@@ -54,12 +53,3 @@ new Ignitor(require('@adonisjs/fold'))
     return https.createServer(options, handler)
   })
   .catch(console.error)
-
-var certOptions = {
-    key: fs.readFileSync(Helpers.appPath() + '/ssl/<you-privatekey.pem>'),
-    cert: fs.readFileSync(Helpers.appPath() + '/ssl/<your-certificate.pem>'),
-}
-
-https
-    .createServer(certOptions, Server.handle.bind(Server))
-    .listen(Env.get('HOST'), Env.get('PORT'))
