@@ -17,39 +17,14 @@
 |     Make sure to pass relative path from the project root.
 */
 
-const { Ignitor } = require('@adonisjs/ignitor')
 const https = require('https')
-const pem = require('pem')
-const path = require('path')
-const fs = require('fs')
+const Helpers = use('Helpers')
 
-// Certificate
-const options = {
-  key: fs.readFileSync(path.join(__dirname, './server.key')),
-  cert: fs.readFileSync(path.join(__dirname, './server.crt'))
+var certOptions = {
+    key: fs.readFileSync(Helpers.appPath() + '/ssl/<you-privatekey.pem>'),
+    cert: fs.readFileSync(Helpers.appPath() + '/ssl/<your-certificate.pem>'),
 }
 
-new Ignitor(require('@adonisjs/fold'))
-  .appRoot(__dirname)
-  .fireHttpServer((handler) => {
-    return https.createServer(options, handler)
-  })
-  .catch(console.error)
-
-pem.createCertificate({ days: 1, selfSigned: true }, (error, keys) => {
-  if (error) {
-    return console.log(error)
-  }
-
-  const options = {
-    key: keys.serviceKey,
-    cert: keys.certificate
-  }
-
-  new Ignitor(require('@adonisjs/fold'))
-    .appRoot(__dirname)
-    .fireHttpServer((handler) => {
-      return https.createServer(options, handler)
-    })
-    .catch(console.error)
-})
+https
+    .createServer(certOptions, Server.handle.bind(Server))
+    .listen(Env.get('HOST'), Env.get('PORT'))
