@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    background-image: url(Imagens/Fundo\ login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: auto;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Começo da Navbar */
+
+.navbar {
+    height: 110px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0; 
+    background-image: url(Imagens/Fundo\ login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.center-nav {
+    float: left;
+    width: 33%;
+    text-align: center;
+    margin-left: 33%;
+}
+
+.right-nav {
+    float: right;
+    overflow: auto;
+    width: 33%;
+    margin-top: 10px;
+}
+
+.my-nav {
+    overflow: auto; 
+}
+
+.navbar img {
+    width: 100px;
+    padding-left: 0;
+    padding-top: 15px;
+}
+
+.navbar h2 {
+    float: right;
+    color: white;
+    padding-left: 2.2%;
+    margin-top: 40px;
+}
+
+.navbar ul {
+    margin-left: 0; 
+    padding-left: 0; 
+    text-transform: uppercase;
+    overflow: auto;
+    height: 21px;
+}
+
+.navbar li {
+    list-style: none;
+    margin-left: 1.5%;
+    display: inline-block;
+    text-align: center; 
+}
+
+.navbar span {
+    color: white;
+    padding-left: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar ul a:hover {
+    border-bottom: 2px #1ba4ff solid;
+}
+
+.navbar .right-nav a:hover {
+    border-bottom: 2px #1ba4ff solid;
+}
+
+#telinha {
+    top: 0;
+    width: 232px;
+    height: 111px;
+    border: 1px #1ba4ff solid;
+    margin-top: 110px;
+    margin-left: 539px;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.493);
+    display: none;
+    text-align: center;
+    position: fixed;
+    border-radius: 20px;
+}
+
+#telinha li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+#telinha ul {
+    padding: 0;
+}
+
+#telinha a:hover {
+    border-bottom: 2px #1ba4ff solid;
+}
+/* Fim da Navbar */
+
+/* Começo conteudo */
+
+.conteudo {
+    margin-top: 350px;
+    text-align: center;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    border: 3px #1ba4ff solid;
+    border-radius: 20px;
+    text-transform: uppercase;
+    height: 35px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    transition: 0.5s;
+    background-color: #1ba4ff;
+    color: black;
+}
+
+/* Fim conteudo */
+
+/* Começo valores */
+
+.valores {
+    color: white;
+    text-align: center;
+    margin-top: 325px;
+    height: 350px;
+}
+
+.div_valores {
+    height: auto;
+    height: 310px;
+}
+
+.left_valores {
+    float: left;
+    width: 49%;
+}
+
+.right_valores {
+    float: right;
+    width: 49%;
+}
+
+.valores b {
+    color: #1ba4ff;
+}
+
+.valores h2 {
+    color: #1ba4ff;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.valores p {
+    font-size: 20px;
+}
+
+.images_valores .container {
+    text-align: center;
+}
+
+#div_slider {
+    width: 570px;
+    height: 330px;
+    border: 3px #1ba4ff solid;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.images button {
+    margin-top: 20px;
+}
+
+.images h2 {
+    color: #1ba4ff;
+}
+
+.center_images {
+    text-align: center;
+}
+
+.images {
+    width: 582px;
+    margin-left: 31%;
+}
+
+#imagens {
+    width: 500px;
+    border-radius: 25px;
+    border: 3px #1ba4ff solid;
+}
+
+.div_imagem {
+    width: 570px;
+}
+
+.left_button {
+    margin-top: 125px;
+    float: left;
+}
+
+.right_button {
+    margin-top: 125px;
+    float: right;
+}
+
+/* Fim valores */
+
+/* Começo footer */
+
+.footer {
+    height: 150px;
+    background-color: grey;
+    margin-top: 50px;
+    border-top: 4px #1ba4ff solid;
+}
+
+.redes {
+    width: 33%;
+    float: left;
+    text-align: center;
+    color: white;
+}
+
+.redes img {
+    width: 125px;
+}
+
+/* Fim footer */
