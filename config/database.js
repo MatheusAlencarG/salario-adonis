@@ -6,6 +6,25 @@ const Env = use('Env')
 /** @type {import('@adonisjs/ignitor/src/Helpers')} */
 const Helpers = use('Helpers')
 
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
+
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -17,6 +36,7 @@ module.exports = {
   |
   */
   connection: Env.get('DB_CONNECTION', 'pg'),
+  
 
   /*
   |--------------------------------------------------------------------------
@@ -73,10 +93,9 @@ module.exports = {
     connection: {
       host: Env.get('DB_HOST', 'localhost'),
       port: Env.get('DB_PORT', ''),
-      user: Env.get('DB_USER', 'root'),
+      user: Env.get(client, 'root'),
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis'),
-      ssl: true
     }
   }
 }
