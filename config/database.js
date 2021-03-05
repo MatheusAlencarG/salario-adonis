@@ -96,6 +96,7 @@ module.exports = {
       user: Env.get(client, 'root'),
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis'),
+      ssl = true
     }
   }
 }
