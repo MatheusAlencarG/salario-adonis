@@ -15,6 +15,8 @@ const client = new Client({
   }
 });
 
+var sslmode = require;
+
 client.connect();
 
 client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
@@ -96,7 +98,7 @@ module.exports = {
       user: Env.get('DB_USER', 'root'),
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis'),
-      sslmode: require
+      sslmode = sslmode
     }
   }
 }
