@@ -7,6 +7,7 @@ const Env = use('Env')
 const Helpers = use('Helpers')
 
 var sslmode = require;
+sslmode = sslmode
 
 module.exports = {
   /*
@@ -81,5 +82,5 @@ module.exports = {
       database: Env.get('DB_DATABASE', 'adonis')
     }
   },
-  sslmode = sslmode
+
 }
